@@ -44,3 +44,16 @@ JOIN		players p ON p.playerID = a.playerID
 GROUP BY	p.playerID, p.name
 HAVING		SUM(a.shots) != 0
 ORDER BY	ROUND(100.0*SUM(a.goals)/SUM(a.shots),2) DESC
+
+-- 4. Statistics by Season
+SELECT		season,
+			SUM(goals) AS totalGoals,
+			SUM(shots) AS totalShots,
+			SUM(shotsOnTarget) AS totalShotsOnTarget,
+			SUM(fouls) AS totalFouls,
+			SUM(corners) AS totalCorners,
+			SUM(yellowCards) AS totalYellowCards,
+			SUM(redCards) AS totalRedCards
+FROM		teamstats
+GROUP BY	season
+ORDER BY	season
