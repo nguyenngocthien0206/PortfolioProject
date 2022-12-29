@@ -1,0 +1,22 @@
+USE Football
+GO
+
+-- 1.Game results by Teams
+SELECT		teamID,
+			name,
+			W AS wins,
+			D AS draws,
+			L AS loses,
+			(W+D+L) AS gamesPlayed
+FROM
+(	SELECT		t.teamID AS teamID,
+				t.name,
+				ts.result
+	FROM		teamstats ts
+	JOIN		teams t ON ts.teamID = t.teamID
+) AS source_table
+PIVOT
+(
+	COUNT(result)
+	FOR result IN ([W],[D],[L])
+) AS pivot_table

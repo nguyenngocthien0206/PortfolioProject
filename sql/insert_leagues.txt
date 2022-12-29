@@ -1,0 +1,5 @@
+INSERT [dbo].[leagues] ([leagueID], [name], [understatNotation]) VALUES (1, N'Premier League', N'EPL')
+INSERT [dbo].[leagues] ([leagueID], [name], [understatNotation]) VALUES (2, N'Serie A', N'Serie_A')
+INSERT [dbo].[leagues] ([leagueID], [name], [understatNotation]) VALUES (3, N'Bundesliga', N'Bundesliga')
+INSERT [dbo].[leagues] ([leagueID], [name], [understatNotation]) VALUES (4, N'La Liga', N'La_liga')
+INSERT [dbo].[leagues] ([leagueID], [name], [understatNotation]) VALUES (5, N'Ligue 1', N'Ligue_1')
